@@ -37,7 +37,10 @@ $this->title = Yii::$app->name;
                 <div class="reviews_box">
                     <div class="reviews_box_header">
                         <div class="header_img"></div>
-                        <div class="header_username">Иван Иванов</div>
+                        <div class="header_user">
+                            <div class="header_username">Иван Иванов</div>
+                            <div class="header_time">2019.09.17 18:30</div>
+                        </div>
                     </div>
                     <div class="reviews_box_content">
                         Благодарю за такой сайт, очень круто!
@@ -46,7 +49,10 @@ $this->title = Yii::$app->name;
                 <div class="reviews_box">
                     <div class="reviews_box_header">
                         <div class="header_img"></div>
-                        <div class="header_username">Иван Иванов</div>
+                        <div class="header_user">
+                            <div class="header_username">Иван Иванов</div>
+                            <div class="header_time">2019.09.17 18:30</div>
+                        </div>
                     </div>
                     <div class="reviews_box_content">
                         Благодарю за такой сайт, очень круто!
@@ -55,7 +61,10 @@ $this->title = Yii::$app->name;
                 <div class="reviews_box">
                     <div class="reviews_box_header">
                         <div class="header_img"></div>
-                        <div class="header_username">Иван Иванов</div>
+                        <div class="header_user">
+                            <div class="header_username">Иван Иванов</div>
+                            <div class="header_time">2019.09.17 18:30</div>
+                        </div>
                     </div>
                     <div class="reviews_box_content">
                         Благодарю за такой сайт, очень круто!
