@@ -17,6 +17,7 @@
 .article-item .article-thumb {
   margin-right: 10px;
   margin-bottom: 10px;
+  width: 80px;
 }
 .article-item .article-text {
   margin-top: 7px;
@@ -97,4 +98,48 @@ a.desc:after {
   padding: 10px 20px;
   margin: 0 0 15px 0;
 }
-/*# sourceMappingURL=style.map */
+.navbar-style{
+  background-color: #eff0f2;
+  border: none;
+}
+.box_padding{
+  padding: 30px 0;
+  min-height: 100vh;
+}
+.article_index_title a{
+  color: inherit;
+  font-size: 20px;
+  font-family: "Montserrat";
+}
+.font-text_h2 {
+  font-size: 24px;
+  font-family: "Montserrat";
+  color: rgb( 0, 0, 0 );
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0.902;
+  z-index: 57;
+}
+.customer_main_page {
+  height: 400px;
+}
+.background_div{
+  background-color: rgb( 239, 240, 242 );
+  opacity: 0.988;
+}
+.about_content{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.reviews{
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.reviews_box{
+  background-color: #ffffff6e;
+  padding: 10px;
+  width: 30%;
+  min-height: 350px;
+}

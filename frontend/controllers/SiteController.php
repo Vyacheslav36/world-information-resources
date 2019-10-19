@@ -3,11 +3,13 @@
 namespace frontend\controllers;
 
 use cheatsheet\Time;
+use common\models\Article;
 use common\sitemap\UrlsIterator;
 use frontend\models\ContactForm;
 use Sitemaped\Element\Urlset\Urlset;
 use Sitemaped\Sitemap;
 use Yii;
+use yii\data\ActiveDataProvider;
 use yii\filters\PageCache;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -57,7 +59,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $query = Article::find()
+            ->where(['status' => Article::STATUS_PUBLISHED])
+            ->orderBy('id desc')
+            ->limit(10);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+        $this->layout = 'other_layout';
+        return $this->render('index', [
+            'articleList' => $dataProvider
+        ]);
     }
 
     /**

@@ -1,0 +1,44 @@
+/*.header_main_page{*/
+    /*top: 50px;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*background-image: linear-gradient(to top right, rgb(194, 194, 194), rgb(194, 194, 194), rgb(194, 194, 194), rgb(195, 195, 195), rgb(195, 195, 195), rgb(195, 195, 195), rgb(195, 195, 195), rgb(195, 195, 195), rgb(195, 195, 195), rgb(196, 196, 196), rgb(196, 196, 196), rgb(196, 196, 196));*/
+    /*height: 40vh*/
+/*}*/
+.header_main_page {
+    height: 400px;
+}
+.header_content{
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.header_content_img{
+    width: 250px;
+    height: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../../img/creatingheader-bkg.png");
+}
+.header_content_description{
+    margin-left: 30px;
+}
+.header_content_big_description{
+    font-size: 34px;
+    font-family: "Montserrat";
+    color: rgb( 80, 80, 80 );
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+.header_content_small_description{
+    font-size: 20px;
+    font-family: "Montserrat";
+    color: rgb( 80, 80, 80 );
+    text-transform: uppercase;
+    line-height: 1.5;
+}
