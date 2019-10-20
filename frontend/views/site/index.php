@@ -1,6 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $articleList \yii\data\ActiveDataProvider */
+/* @var $reviewList \yii\data\ActiveDataProvider */
 
 $this->title = Yii::$app->name;
 ?>
@@ -33,43 +34,19 @@ $this->title = Yii::$app->name;
     <div class="customer_main_page background_div box_padding">
         <div class="container customer_reviews">
             <div style="text-align: center"><span class="font-text_h2">Отзывы</span></div>
-            <div class="reviews">
-                <div class="reviews_box">
-                    <div class="reviews_box_header">
-                        <div class="header_img"></div>
-                        <div class="header_user">
-                            <div class="header_username">Иван Иванов</div>
-                            <div class="header_time">2019.09.17 18:30</div>
-                        </div>
-                    </div>
-                    <div class="reviews_box_content">
-                        Благодарю за такой сайт, очень круто!
-                    </div>
-                </div>
-                <div class="reviews_box">
-                    <div class="reviews_box_header">
-                        <div class="header_img"></div>
-                        <div class="header_user">
-                            <div class="header_username">Иван Иванов</div>
-                            <div class="header_time">2019.09.17 18:30</div>
-                        </div>
-                    </div>
-                    <div class="reviews_box_content">
-                        Благодарю за такой сайт, очень круто!
-                    </div>
-                </div>
-                <div class="reviews_box">
-                    <div class="reviews_box_header">
-                        <div class="header_img"></div>
-                        <div class="header_user">
-                            <div class="header_username">Иван Иванов</div>
-                            <div class="header_time">2019.09.17 18:30</div>
-                        </div>
-                    </div>
-                    <div class="reviews_box_content">
-                        Благодарю за такой сайт, очень круто!
-                    </div>
-                </div>
+            <?php echo \yii\widgets\ListView::widget([
+                'dataProvider' => $reviewList,
+                'summary' => '',
+                'options' => [
+                    'class' => 'reviews'
+                ],
+                'pager' => [
+                    'hideOnSinglePage' => true,
+                ],
+                'itemView' => '../review/_item'
+            ]) ?>
+            <div style="display: flex; justify-content: center">
+                <?= !Yii::$app->user->isGuest ? \yii\helpers\Html::a('Оставить отзыв', '/review/create', ['class'=>'btn btn-success btn-review-index']) : null?>
             </div>
         </div>
     </div>

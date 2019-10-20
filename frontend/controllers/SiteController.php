@@ -4,6 +4,8 @@ namespace frontend\controllers;
 
 use cheatsheet\Time;
 use common\models\Article;
+use common\models\Contact;
+use common\models\Review;
 use common\sitemap\UrlsIterator;
 use frontend\models\ContactForm;
 use Sitemaped\Element\Urlset\Urlset;
@@ -59,16 +61,26 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $query = Article::find()
+        $queryArticle = Article::find()
             ->where(['status' => Article::STATUS_PUBLISHED])
-            ->orderBy('id desc')
-            ->limit(10);
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
+            ->orderBy('created_at desc')
+            ->limit(5);
+        $dataProviderArticle = new ActiveDataProvider([
+            'query' => $queryArticle,
         ]);
+
+        $queryReview = Review::find()
+            ->orderBy('created_at desc')
+            ->limit(3);
+        $dataProviderReview = new ActiveDataProvider([
+            'query' => $queryReview,
+            'pagination' => false
+        ]);
+
         $this->layout = 'other_layout';
         return $this->render('index', [
-            'articleList' => $dataProvider
+            'articleList' => $dataProviderArticle,
+            'reviewList' => $dataProviderReview
         ]);
     }
 
@@ -77,20 +89,10 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($model->contact(Yii::$app->params['adminEmail'])) {
-                Yii::$app->getSession()->setFlash('alert', [
-                    'body' => Yii::t('frontend', 'Thank you for contacting us. We will respond to you as soon as possible.'),
-                    'options' => ['class' => 'alert-success']
-                ]);
-                return $this->refresh();
-            }
+        $model = new Contact();
 
-            Yii::$app->getSession()->setFlash('alert', [
-                'body' => \Yii::t('frontend', 'There was an error sending email.'),
-                'options' => ['class' => 'alert-danger']
-            ]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['/site/index']);
         }
 
         return $this->render('contact', [

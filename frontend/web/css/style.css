@@ -140,7 +140,7 @@ a.desc:after {
 .reviews_box{
   background-color: #ffffff6e;
   padding: 10px;
-  width: 30%;
+  min-width: 300px;
   min-height: 350px;
 }
 .reviews_box_header {
@@ -158,6 +158,15 @@ a.desc:after {
   background: grey;
   border-radius: 50%;
 }
+.header_img img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 .reviews_box_content{
   margin-top: 40px;
+}
+.btn-review-index{
+  margin-top: 40px;
+  text-align: center;
 }

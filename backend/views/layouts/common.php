@@ -166,6 +166,11 @@ Yii::info(Yii::$app->components["i18n"]["translations"]['*']['class'], 'test');
                         ],
                     ],
                     [
+                        'label' => Yii::t('backend', 'Сообщения'),
+                        'url' => ['/contact/index'],
+                        'icon' => '<i class="fa fa-envelope"></i>',
+                    ],
+                    [
                         'label' => Yii::t('backend', 'Static pages'),
                         'url' => ['/content/page/index'],
                         'icon' => '<i class="fa fa-thumb-tack"></i>',
