@@ -13,7 +13,7 @@ Start project in the discipline World Information Resources
 3. [Configure localhost](#configure-localhost)
 4. [Create database](#create-database)
 
-### Configure localhost
+## Configure localhost
 1. Create file `server` at the root of the project
 2. Write this code 
     ```bash
@@ -24,7 +24,7 @@ Start project in the discipline World Information Resources
     ```
 3. Run command `server` the root of the project
     
-### Create database
+## Create database
 1. Create local database in PostgreSql
 2. Create file is name `.env`
 3. Copy from `.env.dist` to `.env`
